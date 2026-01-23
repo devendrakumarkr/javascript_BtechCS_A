@@ -97,4 +97,55 @@
 // button.addEventListener('click',()=>{console.log("Button")},true)
 
 
-console.log("New Code")
+// console.log("New Code")
+// debugger
+// console.log(b)
+// // console.log(a)
+
+// let a=23534
+// var b=5674
+
+// console.log(a)
+// console.log(b)
+// function print(){
+//     var c=345
+//     console.log(c)
+//     console.log("Inside fn")
+// }
+
+// print()
+
+
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+// first()
+
+// function infinite(){
+//     infinite()
+// }
+// infinite()
+
+// console.log(a)
+// console.log(b)
+// // console.log(c)
+
+// var a=345
+// let b=5674
+
+// console.log(a)
+// console.log(b)
+
+let total=40
+
+function calculate(){
+    console.log(total)
+    let total=100
+}
+calculate()
