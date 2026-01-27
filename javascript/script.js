@@ -142,10 +142,16 @@
 // console.log(a)
 // console.log(b)
 
-let total=40
+// let total=40
 
-function calculate(){
-    console.log(total)
-    let total=100
-}
-calculate()
+// function calculate(){
+//     console.log(total)
+//     let total=100
+// }
+// calculate()
+
+
+
+console.log("First Line")
+setTimeout(()=>{console.log("after 2 sec")},2000)
+console.log("Second Line")
