@@ -152,6 +152,54 @@
 
 
 
-console.log("First Line")
-setTimeout(()=>{console.log("after 2 sec")},2000)
-console.log("Second Line")
+// console.log("First Line")
+// setTimeout(()=>{console.log("after 2 sec")},2000)
+// console.log("Second Line")
+
+
+// setTimeout(()=>{
+//     alert("Line after 2 Sec")
+// },2*1000)
+
+
+// const timerID=setInterval(()=>{console.log("setInterval")},1000)
+
+// const timeoutID=setTimeout(()=>{clearInterval(timerID)},10000)
+// clearTimeout(timeoutID)
+
+
+// let num=1;
+
+// const id=setInterval(()=>{
+//     if(num===10)clearInterval(id)
+//     console.log(num)
+//     num+=1
+// },1000)
+
+
+// console.log("before timeout")
+// setTimeout(() => {
+//     console.log("Settimeout")
+// }, 0);
+// console.log("After timeout")
+
+// const name=document.querySelector("#name")
+// const btn=document.querySelector(".btn")
+// const list=document.querySelector(".list")
+// btn.addEventListener('click',()=>{
+//     if(name.value===""){
+//         alert("Enter the name!!")
+//         return;
+//     }
+//     const li=document.createElement('li')
+//     const dlt=document.createElement('button')
+//     dlt.innerText="Delete"
+//     li.innerText=name.value;
+//     dlt.addEventListener("click",()=>{
+//         list.removeChild(li)
+//     })
+//     li.appendChild(dlt)
+//     list.appendChild(li)
+    
+//     name.value=""
+// })
