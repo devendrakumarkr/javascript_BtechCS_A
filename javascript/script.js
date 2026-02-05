@@ -203,3 +203,108 @@
     
 //     name.value=""
 // })
+
+
+// console.log("First Line")
+// setTimeout(()=>{
+//     console.log("after 2 sec")
+//     console.log("Second Line")
+// },2000)
+
+
+// function print(num){ //higher order fn
+//     setTimeout(()=>{
+//         console.log("Inside print")
+//          num()
+//     },2000)
+   
+// }
+
+// function sample(){  //callback fn
+//     console.log("Inside callback")
+    
+// }
+
+// print(sample)
+
+// console.log("Before Promise")
+const p=new Promise(function(res,rej){
+
+    let done=true;
+    setTimeout(()=>{
+        if(done){
+            res({name:"Anand",age:23})
+        }else{
+            rej("Word has not been completed")
+        }
+    },5000)
+})
+// // console.log(p)
+p.then((data)=>{
+    console.log("promise resolved")
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Finally block")
+})
+//  console.log("After Promise")
+
+
+function doHomeWork(){
+    const p=new Promise((res,rej)=>{
+        let done=true;
+        setTimeout(()=>{
+            if(done){
+                console.log("Homework completed")
+                res("Homework is Done")
+            }else{
+                rej("Homework not completed")
+            }
+        },2000)
+    })
+    return p
+}
+
+function eatDinner(){
+    const p=new Promise((res,rej)=>{
+        let done=false;
+        setTimeout(()=>{
+            if(done){
+                console.log("Dinner completed")
+                res("Dinner is Done")
+            }else{
+                rej("Dinner not completed")
+            }
+        },2000)
+    })
+    return p
+}
+
+function goToPlayground(){
+    const p=new Promise((res,rej)=>{
+        let done=true;
+        setTimeout(()=>{
+            if(done){
+                console.log("Went to the playground")
+                res("Playground Time")
+            }else{
+                rej("Not Allowed to go!")
+            }
+        },2000)
+    })
+    return p
+}
+
+doHomeWork().then((data)=>{
+    console.log(data)
+    return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
+}).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Go To Sleep")
+})
