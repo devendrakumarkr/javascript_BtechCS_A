@@ -228,83 +228,183 @@
 // print(sample)
 
 // console.log("Before Promise")
-const p=new Promise(function(res,rej){
+// const p=new Promise(function(res,rej){
 
-    let done=true;
-    setTimeout(()=>{
-        if(done){
-            res({name:"Anand",age:23})
-        }else{
-            rej("Word has not been completed")
-        }
-    },5000)
+//     let done=true;
+//     setTimeout(()=>{
+//         if(done){
+//             res({name:"Anand",age:23})
+//         }else{
+//             rej("Word has not been completed")
+//         }
+//     },5000)
+// })
+// // // console.log(p)
+// p.then((data)=>{
+//     console.log("promise resolved")
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+// //  console.log("After Promise")
+
+
+// function doHomeWork(){
+//     const p=new Promise((res,rej)=>{
+//         let done=true;
+//         setTimeout(()=>{
+//             if(done){
+//                 console.log("Homework completed")
+//                 res("Homework is Done")
+//             }else{
+//                 rej("Homework not completed")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function eatDinner(){
+//     const p=new Promise((res,rej)=>{
+//         let done=false;
+//         setTimeout(()=>{
+//             if(done){
+//                 console.log("Dinner completed")
+//                 res("Dinner is Done")
+//             }else{
+//                 rej("Dinner not completed")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function goToPlayground(){
+//     const p=new Promise((res,rej)=>{
+//         let done=true;
+//         setTimeout(()=>{
+//             if(done){
+//                 console.log("Went to the playground")
+//                 res("Playground Time")
+//             }else{
+//                 rej("Not Allowed to go!")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// doHomeWork().then((data)=>{
+//     console.log(data)
+//     return eatDinner()
+// }).then((data)=>{
+//     console.log(data)
+//     return goToPlayground()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Go To Sleep")
+// })                          
+
+// console.log("first line")
+// setTimeout(()=>{
+//    console.log("Inside Timeout") 
+// },0)
+// const p=new Promise((res,rej)=>{
+//     res("Inside Promise")
+// })
+// p.then((data)=>{
+//     console.log(data)
+// })
+// const p2=new Promise((res,rej)=>{
+//     res("Inside Promise")
+// })
+// p2.then((data)=>{
+//     console.log(data)
+// })
+// const p3=new Promise((res,rej)=>{
+//     res("Inside Promise")
+// })
+// p3.then((data)=>{
+//     console.log(data)
+// })
+// console.log("last line")
+
+// function orderFood(){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log("Food Ordered!!!")
+//             res("Food Ordered")
+//         },2000)
+//     })
+// }
+// function prepareFood(){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log("Food Prepared")
+//             res()
+//         },2000)
+//     })
+// }
+// function deliverFood(){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log("Food Deliverd")
+//             res()
+//         },2000)
+//     })
+// }
+
+// async function foodOrder(){
+//     const data=await orderFood()
+//     console.log(data)
+//     await prepareFood()
+//     await deliverFood()   
+// }
+
+// foodOrder()
+
+// orderFood().then((data)=>{
+//     console.log(data)
+//     return prepareFood()
+// }).then((data)=>{
+//     console.log(data)
+//     return deliverFood()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+const form=document.querySelector('#form')
+const eventCards=document.querySelector('.cards')
+form.addEventListener('submit',function(event){
+    event.preventDefault()
+    const title=eventTitle.value
+    const date=eventDate.value
+    const cat=category.value
+    const desc=description.value
+
+    const card=document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML=`
+        <h2>${title}</h2>
+        <p>📅${date}</p>
+        <button>${cat}</button>
+        <p>${desc}</p>
+        <div class="deleteCard">x</div>
+    `
+
+    card.querySelector('.deleteCard').addEventListener('click',function(){
+        card.remove()
+    })
+
+    eventCards.appendChild(card)
 })
-// // console.log(p)
-p.then((data)=>{
-    console.log("promise resolved")
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Finally block")
-})
-//  console.log("After Promise")
 
-
-function doHomeWork(){
-    const p=new Promise((res,rej)=>{
-        let done=true;
-        setTimeout(()=>{
-            if(done){
-                console.log("Homework completed")
-                res("Homework is Done")
-            }else{
-                rej("Homework not completed")
-            }
-        },2000)
-    })
-    return p
-}
-
-function eatDinner(){
-    const p=new Promise((res,rej)=>{
-        let done=false;
-        setTimeout(()=>{
-            if(done){
-                console.log("Dinner completed")
-                res("Dinner is Done")
-            }else{
-                rej("Dinner not completed")
-            }
-        },2000)
-    })
-    return p
-}
-
-function goToPlayground(){
-    const p=new Promise((res,rej)=>{
-        let done=true;
-        setTimeout(()=>{
-            if(done){
-                console.log("Went to the playground")
-                res("Playground Time")
-            }else{
-                rej("Not Allowed to go!")
-            }
-        },2000)
-    })
-    return p
-}
-
-doHomeWork().then((data)=>{
-    console.log(data)
-    return eatDinner()
-}).then((data)=>{
-    console.log(data)
-    return goToPlayground()
-}).then((data)=>{
-    console.log(data)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Go To Sleep")
+document.addEventListener('keydown',(event)=>{
+    document.querySelector('.key').innerText=event.key
 })
