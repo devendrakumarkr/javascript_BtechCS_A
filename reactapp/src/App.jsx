@@ -3,7 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Trending from './component/Sample'
+import Sample from './component/Sample'
+import Navbar from './component/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,9 @@ function App() {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+        <Navbar/>
+        <Sample/>
+
         <div>
           <h1>Get started</h1>
           <p>
@@ -110,7 +114,6 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-      <Trending count={count} setCount={setCount}/>
     </>
   )
 }

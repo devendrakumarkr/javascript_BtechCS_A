@@ -1,49 +1,24 @@
-// import React from 'react'
-// import { add } from "./utility"
+import React, { Component } from 'react'
 
-// function Sample(props) {
-//     console.log(add(2,4))
-//   return (
-//     <div>
-//       <h2>Trending Topics</h2>
-//       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quod voluptatum iure incidunt, temporibus sequi iusto, pariatur maxime commodi ducimus, nihil autem. Magni modi praesentium, fuga culpa ad animi laboriosam!</p>
-//        <button
-//           className="counter"
-//           onClick={() => props.setCount((count) => count + 1)}
-//         >
-//           Count is {props.count}
-//         </button>
-//     </div>
-//   )
-// }
-
-// export default Sample
-
-import React, {Component} from 'react'
-
-class Sample extends Component{
-    constructor(props){
-        super(props)
+ class Sample extends Component {
+    constructor(){
+        super()
+        this.state = {
+            count: 0
+        }
     }
-    render(){
-        return (
-        <div>
-          <h2>Trending Topics</h2>
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quod voluptatum iure incidunt, temporibus sequi iusto, pariatur maxime commodi ducimus, nihil autem. Magni modi praesentium, fuga culpa ad animi laboriosam!</p>
-           <button
-            className="counter"
-            onClick={() => this.props.setCount((count) => count + 1)}
-            >
-            Count is {this.props.count}
-            </button>
-        </div>
+    increment = () => {
+        this.setState({count: this.state.count + 1})
+    }
+  render() {
+    return (
+      <div>
+        <h1>This is a sample component</h1>
+        <h2>{this.state.count}</h2>
+        <button onClick={this.increment}>Increment</button>
+      </div>
     )
-    }
+  }
 }
+
 export default Sample
-
-
-
-
-
-
