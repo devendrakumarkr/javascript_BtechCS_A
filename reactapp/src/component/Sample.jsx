@@ -48,6 +48,8 @@
 
 import React from 'react'
 import { useState } from 'react'
+import styles from "../css/Sample.module.css"
+import NavStyle from "../css/NavBar.module.css"
 
 function Sample() {
   // let count=0
@@ -64,7 +66,7 @@ function Sample() {
     <div>
       <h1>This is a sample component</h1>
       <h2>{count}</h2>
-      <button style={{backgroundColor:"red",color:"white", width:"100px", height:"30px"}} onClick={increment}>Increment</button>
+      <button className={styles.btn}  onClick={increment}>Increment</button>
       <button style={{backgroundColor:"yellow", color:"black", width:"100px", height:"30px"}} onClick={decrement}>decrement</button>
     </div>
   )
