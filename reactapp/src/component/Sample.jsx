@@ -50,6 +50,9 @@ import React from 'react'
 import { useState } from 'react'
 import styles from "../css/Sample.module.css"
 import NavStyle from "../css/NavBar.module.css"
+// import styled from "styled-components"
+import styled from "@emotion/styled"
+import { css } from '@emotion/react'
 
 function Sample() {
   // let count=0
@@ -66,13 +69,26 @@ function Sample() {
     <div>
       <h1>This is a sample component</h1>
       <h2>{count}</h2>
-      <button className={styles.btn}  onClick={increment}>Increment</button>
-      <button style={{backgroundColor:"yellow", color:"black", width:"100px", height:"30px"}} onClick={decrement}>decrement</button>
+      <button css={funcButton} onClick={increment}>Increment</button>
+      <Button danger onClick={decrement}>decrement</Button>
     </div>
   )
 }
 
 export default Sample
 
-
+const funcButton=css`
+    background-color: yellow;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+  ` 
+const Button=styled.button`
+    background-color: ${props=>props.danger ? "red" : "green"};
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+  `
 
