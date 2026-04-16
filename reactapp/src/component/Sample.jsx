@@ -47,7 +47,7 @@
 
 
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from "../css/Sample.module.css"
 import NavStyle from "../css/NavBar.module.css"
 // import styled from "styled-components"
@@ -57,6 +57,14 @@ import { css } from '@emotion/react'
 function Sample() {
   // let count=0
   const [count, setCount]=useState(0)
+  const[name, setName]= useState("Devendra")
+
+  useEffect(()=>{
+    console.log("Component is mounted")
+    return () => {
+      console.log("Component unmount")
+    }
+  },[name])
   
   const increment = () => {
        setCount(count + 1)
@@ -69,8 +77,11 @@ function Sample() {
     <div>
       <h1>This is a sample component</h1>
       <h2>{count}</h2>
+      <h3>{name}</h3>
+      <button onClick={()=>setName("Alex")}>Change the Name</button>
       <button css={funcButton} onClick={increment}>Increment</button>
       <Button danger onClick={decrement}>decrement</Button>
+      <button className='bg-blue-600 text-white w-18'>Sample </button>
     </div>
   )
 }
