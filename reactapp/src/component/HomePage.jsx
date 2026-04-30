@@ -1,6 +1,7 @@
 import React from 'react'
+import Navbar from './Navbar';
 
-function HomePage() {
+function HomePage({menu}) {
   const loggedin=false;
 //   if(loggedin){
 //     return (
@@ -13,8 +14,10 @@ function HomePage() {
 //   }
 
 return(
-  
-    loggedin?<button>Logout</button>: <button>Login</button>
+    <>
+      <Navbar list={menu} />
+      {loggedin?<button>Logout</button>: <button>Login</button>}
+    </>
 )
 }
 
